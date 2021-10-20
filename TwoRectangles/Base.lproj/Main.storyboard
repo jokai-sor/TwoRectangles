@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,22 +13,37 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TwoRectangles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a82-3f-xNb">
-                                <rect key="frame" x="19" y="460" width="374" height="376"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rTB-1M-QXe">
-                                <rect key="frame" x="19" y="66" width="374" height="374"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZLK-Un-ZTU">
+                                <rect key="frame" x="19" y="66" width="335" height="686"/>
+                                <subviews>
+                                    <view contentMode="TopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="rTB-1M-QXe">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="332"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                    </view>
+                                    <view contentMode="bottomRight" translatesAutoresizingMaskIntoConstraints="NO" id="a82-3f-xNb">
+                                        <rect key="frame" x="0.0" y="352" width="335" height="334"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rTB-1M-QXe" firstAttribute="height" secondItem="a82-3f-xNb" secondAttribute="height" multiplier="0.994681" id="P01-g1-5YQ"/>
+                                    <constraint firstItem="rTB-1M-QXe" firstAttribute="width" secondItem="a82-3f-xNb" secondAttribute="width" id="dua-o6-g9H"/>
+                                    <constraint firstItem="a82-3f-xNb" firstAttribute="centerX" secondItem="ZLK-Un-ZTU" secondAttribute="centerX" id="hOh-ZN-0YA"/>
+                                    <constraint firstItem="rTB-1M-QXe" firstAttribute="centerX" secondItem="ZLK-Un-ZTU" secondAttribute="centerX" id="s6N-HY-25m"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZLK-Un-ZTU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="19" id="4sX-1E-TZF"/>
+                            <constraint firstItem="rTB-1M-QXe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="5iK-Jj-laG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a82-3f-xNb" secondAttribute="bottom" constant="26" id="Kvr-n3-1yK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZLK-Un-ZTU" secondAttribute="trailing" constant="21" id="QJ1-eQ-CbA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
